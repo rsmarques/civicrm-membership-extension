@@ -7,8 +7,9 @@ require_once 'membership.civix.php';
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_config
  */
-function membership_civicrm_config(&$config) {
-  _membership_civix_civicrm_config($config);
+function membership_civicrm_config(&$config)
+{
+    _membership_civix_civicrm_config($config);
 }
 
 /**
@@ -18,8 +19,9 @@ function membership_civicrm_config(&$config) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_xmlMenu
  */
-function membership_civicrm_xmlMenu(&$files) {
-  _membership_civix_civicrm_xmlMenu($files);
+function membership_civicrm_xmlMenu(&$files)
+{
+    _membership_civix_civicrm_xmlMenu($files);
 }
 
 /**
@@ -27,8 +29,9 @@ function membership_civicrm_xmlMenu(&$files) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_install
  */
-function membership_civicrm_install() {
-  _membership_civix_civicrm_install();
+function membership_civicrm_install()
+{
+    _membership_civix_civicrm_install();
 }
 
 /**
@@ -36,8 +39,9 @@ function membership_civicrm_install() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_uninstall
  */
-function membership_civicrm_uninstall() {
-  _membership_civix_civicrm_uninstall();
+function membership_civicrm_uninstall()
+{
+    _membership_civix_civicrm_uninstall();
 }
 
 /**
@@ -45,8 +49,9 @@ function membership_civicrm_uninstall() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_enable
  */
-function membership_civicrm_enable() {
-  _membership_civix_civicrm_enable();
+function membership_civicrm_enable()
+{
+    _membership_civix_civicrm_enable();
 }
 
 /**
@@ -54,8 +59,9 @@ function membership_civicrm_enable() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_disable
  */
-function membership_civicrm_disable() {
-  _membership_civix_civicrm_disable();
+function membership_civicrm_disable()
+{
+    _membership_civix_civicrm_disable();
 }
 
 /**
@@ -65,13 +71,14 @@ function membership_civicrm_disable() {
  * @param $queue CRM_Queue_Queue, (for 'enqueue') the modifiable list of pending up upgrade tasks
  *
  * @return mixed
- *   Based on op. for 'check', returns array(boolean) (TRUE if upgrades are pending)
- *                for 'enqueue', returns void
+ *               Based on op. for 'check', returns array(boolean) (TRUE if upgrades are pending)
+ *               for 'enqueue', returns void
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_upgrade
  */
-function membership_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
-  return _membership_civix_civicrm_upgrade($op, $queue);
+function membership_civicrm_upgrade($op, CRM_Queue_Queue $queue = null)
+{
+    return _membership_civix_civicrm_upgrade($op, $queue);
 }
 
 /**
@@ -82,8 +89,9 @@ function membership_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_managed
  */
-function membership_civicrm_managed(&$entities) {
-  _membership_civix_civicrm_managed($entities);
+function membership_civicrm_managed(&$entities)
+{
+    _membership_civix_civicrm_managed($entities);
 }
 
 /**
@@ -97,8 +105,9 @@ function membership_civicrm_managed(&$entities) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_caseTypes
  */
-function membership_civicrm_caseTypes(&$caseTypes) {
-  _membership_civix_civicrm_caseTypes($caseTypes);
+function membership_civicrm_caseTypes(&$caseTypes)
+{
+    _membership_civix_civicrm_caseTypes($caseTypes);
 }
 
 /**
@@ -111,8 +120,9 @@ function membership_civicrm_caseTypes(&$caseTypes) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_caseTypes
  */
-function membership_civicrm_angularModules(&$angularModules) {
-_membership_civix_civicrm_angularModules($angularModules);
+function membership_civicrm_angularModules(&$angularModules)
+{
+    _membership_civix_civicrm_angularModules($angularModules);
 }
 
 /**
@@ -120,36 +130,34 @@ _membership_civix_civicrm_angularModules($angularModules);
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_alterSettingsFolders
  */
-function membership_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
-  _membership_civix_civicrm_alterSettingsFolders($metaDataFolders);
+function membership_civicrm_alterSettingsFolders(&$metaDataFolders = null)
+{
+    _membership_civix_civicrm_alterSettingsFolders($metaDataFolders);
 }
-
-/**
- * Functions below this ship commented out. Uncomment as required.
- *
 
 /**
  * Implements hook_civicrm_preProcess().
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_preProcess
- *
-function membership_civicrm_preProcess($formName, &$form) {
+ */
+// function membership_civicrm_preProcess($formName, &$form) {
 
-} // */
+// }
 
 /**
  * Implements hook_civicrm_navigationMenu().
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_navigationMenu
- *
-function membership_civicrm_navigationMenu(&$menu) {
-  _membership_civix_insert_navigation_menu($menu, NULL, array(
-    'label' => ts('The Page', array('domain' => 'com.rsmarques.membership')),
-    'name' => 'the_page',
-    'url' => 'civicrm/the-page',
-    'permission' => 'access CiviReport,access CiviContribute',
-    'operator' => 'OR',
-    'separator' => 0,
-  ));
-  _membership_civix_navigationMenu($menu);
-} // */
+ */
+function membership_civicrm_navigationMenu(&$menu)
+{
+    _membership_civix_insert_navigation_menu($menu, null, array(
+        'label' => ts('Membership Filter', array('domain' => 'com.rsmarques.membership')),
+        'name' => 'membership-filter',
+        'url' => 'civicrm/#/membership/filter',
+        'permission' => 'access CiviReport,access CiviContribute',
+        'operator' => 'OR',
+        'separator' => 0,
+    ));
+    _membership_civix_navigationMenu($menu);
+}
