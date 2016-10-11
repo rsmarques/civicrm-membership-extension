@@ -154,7 +154,7 @@ function membership_civicrm_navigationMenu(&$menu)
     _membership_civix_insert_navigation_menu($menu, null, array(
         'label' => ts('Membership Filter', array('domain' => 'com.rsmarques.membership')),
         'name' => 'membership-filter',
-        'url' => 'civicrm/#/membership/filter',
+        'url' => 'civicrm/a/#/membership/filter',
         'permission' => 'access CiviReport,access CiviContribute',
         'operator' => 'OR',
         'separator' => 0,
