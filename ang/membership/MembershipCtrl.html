@@ -1,45 +1,53 @@
 <div class="crm-container">
-  <div crm-ui-debug="myContact"></div>
+  <div crm-ui-debug="memberships"></div>
 
   <form name="myForm" crm-ui-id-scope>
-
-    <div class="help">
-      <p>{{ts('This is an auto-generated skeletal page.')}}</p>
-
-      <p>{{ts('To view more debugging information, edit the URL and include "?angularDebug=1".')}}</p>
-    </div>
-
-    <div crm-ui-accordion="{title: ts('Greeting')}">
-      <p ng-show="myContact.first_name">{{ ts('Hello, %1.', {1: myContact.first_name}) }}</p>
-
-      <p ng-show="!myContact.first_name">{{ ts('Hello, stranger.') }}</p>
-    </div>
-
-    <div crm-ui-accordion="{title: ts('About Me')}">
-      <div class="crm-block">
-        <div class="crm-group">
-          <div crm-ui-field="{name: 'myForm.first_name', title: ts('Name'), help: hs('full_name')}">
-            <input
-              crm-ui-id="myForm.first_name"
-              name="first_name"
-              ng-model="myContact.first_name"
-              class="crm-form-text"
-              placeholder="{{ts('First')}}"
-              />
-            <input
-              crm-ui-id="myForm.last_name"
-              name="last_name"
-              ng-model="myContact.last_name"
-              class="crm-form-text"
-              placeholder="{{ts('Last')}}"
-              />
-          </div>
-        </div>
-      </div>
+    <div crm-ui-accordion="{title: ts('Filter Memberships by Start Date')}">
 
       <div>
-        <button ng-click="save()">{{ts('Save')}}</button>
+        From: <input crm-ui-datepicker="{time: false, date: 'yy-mm-dd'}" ng-model="filters.start"/>
+        To: <input crm-ui-datepicker="{time: false, date: 'yy-mm-dd'}" ng-model="filters.end"/>
+        <button ng-click="clearFilters()">Clear Filters</button>
       </div>
+
+    </div>
+
+    <div crm-ui-accordion="{title: ts('Memberships')}">
+      <table>
+        <thead>
+          <tr>
+            <td>
+              <button ng-click="sortBy('display_name')">{{ts('Name')}}</button>
+              <span class="sortorder" ng-show="sort === 'display_name'" ng-class="{reverse: sortReverse}"></span>
+            </td>
+            <td>
+              <button ng-click="sortBy('membership_name')">{{ts('Type')}}</button>
+              <span class="sortorder" ng-show="sort === 'membership_name'" ng-class="{reverse: sortReverse}"></span>
+            </td>
+            <td>
+              <button ng-click="sortBy('start_date')">{{ts('Start Date')}}</button>
+              <span class="sortorder" ng-show="sort === 'start_date'" ng-class="{reverse: sortReverse}"></span>
+            </td>
+            <td>
+              <button ng-click="sortBy('end_date')">{{ts('End Date')}}</button>
+              <span class="sortorder" ng-show="sort === 'end_date'" ng-class="{reverse: sortReverse}"></span>
+            </td>
+            <td>
+              <button ng-click="sortBy('source')">{{ts('Source')}}</button>
+              <span class="sortorder" ng-show="sort === 'source'" ng-class="{reverse: sortReverse}"></span>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="membership in memberships | filter : filterMembership() | orderBy:sort:sortReverse">
+            <td>{{membership.display_name}}</td>
+            <td>{{membership.membership_name}}</td>
+            <td>{{membership.start_date}}</td>
+            <td>{{membership.end_date}}</td>
+            <td>{{membership.source}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
   </form>
